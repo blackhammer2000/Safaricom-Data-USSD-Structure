@@ -815,6 +815,128 @@ if (USSD === "*544#") {
                           break;
                       }
                       break;
+                    case 2:
+                      const allInOneOtherNumberOptions = monthlyAllInOneQuery();
+                      switch (allInOneOtherNumberOptions) {
+                        case 1:
+                          const option1 = BuyOptionQuery();
+                          switch (option1) {
+                            case 1:
+                              const option1PaymentChoice = paymentOptionQuery(
+                                5000,
+                                1000,
+                                1050,
+                                "400MINS + WhatsApp"
+                              );
+                              switch (option1PaymentChoice) {
+                                case 1:
+                                  const option1AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      5000,
+                                      1000,
+                                      1050,
+                                      "30 Days",
+                                      "400MINS + WhatsApp"
+                                    );
+                                  switch (option1AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        5000,
+                                        1000,
+                                        1050,
+                                        `30 Days for ${otherNumber}`,
+                                        "400MINS + WhatsApp"
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                        case 2:
+                          const option2 = BuyOptionQuery();
+                          switch (option2) {
+                            case 1:
+                              const option2PaymentChoice = paymentOptionQuery(
+                                15000,
+                                2000,
+                                2100,
+                                "1000MINS + WhatsApp"
+                              );
+                              switch (option2PaymentChoice) {
+                                case 1:
+                                  const option2AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      15000,
+                                      2000,
+                                      2100,
+                                      "30 Days",
+                                      "1000MINS + WhatsApp"
+                                    );
+                                  switch (option2AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        15000,
+                                        2000,
+                                        2100,
+                                        `30 Days for ${otherNumber}`,
+                                        "1000MINS + WhatsApp"
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                        case 3:
+                          const option3 = BuyOptionQuery();
+                          switch (option3) {
+                            case 1:
+                              const option3PaymentChoice = paymentOptionQuery(
+                                25000,
+                                3000,
+                                3050,
+                                "1500MINS + WhatsApp"
+                              );
+                              switch (option3PaymentChoice) {
+                                case 1:
+                                  const option3AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      25000,
+                                      3000,
+                                      3150,
+                                      "30 Days",
+                                      "1500MINS + WhatsApp"
+                                    );
+                                  switch (option3AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        25000,
+                                        3000,
+                                        3150,
+                                        `30 Days for ${otherNumber}`,
+                                        "1500MINS + WhatsApp"
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                      }
+                      break;
                   }
                   break;
               }
@@ -1180,7 +1302,7 @@ function acceptOrRejectQuery(dataPlan, smsPlan, price, validity, extra) {
 
   const choice = parseInt(
     prompt(
-      `Do you Accept to purchase ${data}${dataSuffix} ${plus} ${
+      `Confirm the purchase of ${data}${dataSuffix} ${plus} ${
         smsPlan > 0 ? smsPlan : ""
       }${smsSuffix} ${plus2} ${
         extra ? extra : ""
@@ -1196,7 +1318,7 @@ function successfulDataPurchase(dataPlan, smsPlan, Price, validity, extra) {
   const plus = smsPlan > 0 ? "+" : "";
   const plus2 = extra ? "+" : "";
   alert(
-    `You have successfully purchased ${
+    `Do more with Safaricom. You have successfully purchased ${
       dataPlan >= 1000 ? dataPlan / 1000 : dataPlan
     }${dataSuffix} ${plus} ${smsPlan > 0 ? smsPlan : ""}${smsSuffix} ${plus2} ${
       extra ? extra : ""
