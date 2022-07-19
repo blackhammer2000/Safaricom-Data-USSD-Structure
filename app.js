@@ -33,8 +33,262 @@ if (USSD === "*544#") {
                               cancelPurchase();
                               break;
                           }
+                          break;
                       }
+                      break;
                   }
+                  break;
+                case 2:
+                  const BuyOption2 = BuyOptionQuery();
+                  switch (BuyOption2) {
+                    case 1:
+                      const paymentOption2 = paymentOptionQuery(100, 70, 20);
+                      switch (paymentOption2) {
+                        case 1:
+                          const acceptOrRejectOption2 = acceptOrRejectQuery(
+                            100,
+                            70,
+                            20
+                          );
+                          switch (acceptOrRejectOption2) {
+                            case 1:
+                              successfulDataPurchase(100, 70, 20, "24HRS");
+                              break;
+                            case 2:
+                              cancelPurchase();
+                              break;
+                          }
+                          break;
+                      }
+                      break;
+                  }
+                  break;
+                case 3:
+                  const BuyOption3 = BuyOptionQuery();
+                  switch (BuyOption3) {
+                    case 1:
+                      const paymentOption3 = paymentOptionQuery(300, 200, 50);
+                      switch (paymentOption3) {
+                        case 1:
+                          const acceptOrRejectOption3 = acceptOrRejectQuery(
+                            300,
+                            200,
+                            50,
+                            "24hrs"
+                          );
+                          switch (acceptOrRejectOption3) {
+                            case 1:
+                              successfulDataPurchase(300, 200, 50, "24hrs");
+                              break;
+                            case 2:
+                              cancelPurchase();
+                              break;
+                          }
+                          break;
+                      }
+                      break;
+                  }
+                  break;
+              }
+              break;
+            case 4:
+              const BuyOption4 = BuyOptionQuery();
+              switch (BuyOption4) {
+                case 1:
+                  const paymentOption4 = paymentOptionQuery(1000, 200, 100);
+                  switch (paymentOption4) {
+                    case 1:
+                      const acceptOrRejectOption4 = acceptOrRejectQuery(
+                        1000,
+                        200,
+                        100,
+                        "24hrs"
+                      );
+                      switch (acceptOrRejectOption4) {
+                        case 1:
+                          successfulDataPurchase(1000, 200, 100, "24HRS");
+                          break;
+                        case 2:
+                          cancelPurchase();
+                          break;
+                      }
+                      break;
+                  }
+                  break;
+              }
+              break;
+            case 5:
+              const powerHourOption = BuyOptionQuery();
+              switch (powerHourOption) {
+                case 1:
+                  const powerHourPaymentOption = paymentOptionQuery(250, 0, 19);
+                  switch (powerHourPaymentOption) {
+                    case 1:
+                      const powerHourAcceptOrRejectOption = acceptOrRejectQuery(
+                        250,
+                        0,
+                        19,
+                        "1hr"
+                      );
+                      switch (powerHourAcceptOrRejectOption) {
+                        case 1:
+                          successfulDataPurchase(250, 0, 19, "1hr");
+                          break;
+                        case 2:
+                          cancelPurchase();
+                          break;
+                      }
+                      break;
+                  }
+                  break;
+              }
+              break;
+            case 2:
+              const weeklyNyakuaOptions = weeklyNyakuaQuery();
+              switch (weeklyNyakuaOptions) {
+                case 1:
+                  const option1 = BuyOptionQuery();
+                  switch (option1) {
+                    case 1:
+                      const option1PaymentChoice = paymentOptionQuery(
+                        200,
+                        0,
+                        50
+                      );
+                      switch (option1PaymentChoice) {
+                        case 1:
+                          const option1AcceptOrRejectOption =
+                            acceptOrRejectQuery(200, 0, 50, "7 Days");
+                          switch (option1AcceptOrRejectOption) {
+                            case 1:
+                              successfulDataPurchase(200, 0, 50, "7 Days");
+                              break;
+                            case 2:
+                              cancelPurchase();
+                              break;
+                          }
+                          break;
+                      }
+                      break;
+                  }
+                  break;
+                case 2:
+                  const option2 = BuyOptionQuery();
+                  switch (option2) {
+                    case 1:
+                      const option2PaymentChoice = paymentOptionQuery(
+                        500,
+                        0,
+                        100,
+                        "WhatsApp"
+                      );
+                      switch (option2PaymentChoice) {
+                        case 1:
+                          const option2AcceptOrRejectOption =
+                            acceptOrRejectQuery(
+                              500,
+                              0,
+                              100,
+                              "7 Days",
+                              "WhatsApp"
+                            );
+                          switch (option2AcceptOrRejectOption) {
+                            case 1:
+                              successfulDataPurchase(
+                                500,
+                                0,
+                                100,
+                                "7 Days",
+                                "WhatsApp"
+                              );
+                              break;
+                            case 2:
+                              cancelPurchase();
+                              break;
+                          }
+                          break;
+                      }
+                      break;
+                  }
+                  break;
+                case 3:
+                  const option3 = BuyOptionQuery();
+                  switch (option3) {
+                    case 1:
+                      const option3PaymentChoice = paymentOptionQuery(
+                        1500,
+                        0,
+                        250,
+                        "WhatsApp"
+                      );
+                      switch (option3PaymentChoice) {
+                        case 1:
+                          const option3AcceptOrRejectOption =
+                            acceptOrRejectQuery(
+                              1500,
+                              0,
+                              250,
+                              "7 Days",
+                              "WhatsApp"
+                            );
+                          switch (option3AcceptOrRejectOption) {
+                            case 1:
+                              successfulDataPurchase(
+                                1500,
+                                0,
+                                250,
+                                "7 Days",
+                                "WhatsApp"
+                              );
+                              break;
+                            case 2:
+                              cancelPurchase();
+                              break;
+                          }
+                          break;
+                      }
+                      break;
+                  }
+                  break;
+                case 4:
+                  const option4 = BuyOptionQuery();
+                  switch (option4) {
+                    case 1:
+                      const option4PaymentChoice = paymentOptionQuery(
+                        4000,
+                        0,
+                        500,
+                        "WhatsApp"
+                      );
+                      switch (option4PaymentChoice) {
+                        case 1:
+                          const option4AcceptOrRejectOption =
+                            acceptOrRejectQuery(
+                              4000,
+                              0,
+                              500,
+                              "7 Days",
+                              "WhatsApp"
+                            );
+                          switch (option4AcceptOrRejectOption) {
+                            case 1:
+                              successfulDataPurchase(
+                                4000,
+                                0,
+                                500,
+                                "7 Days",
+                                "WhatsApp"
+                              );
+                              break;
+                            case 2:
+                              cancelPurchase();
+                              break;
+                          }
+                          break;
+                      }
+                      break;
+                  }
+                  break;
               }
               break;
           }
@@ -83,7 +337,8 @@ if (USSD === "*544#") {
               const oneHourAcceptOrRejectOption = acceptOrRejectQuery(
                 1000,
                 0,
-                20
+                20,
+                "1hr"
               );
               switch (oneHourAcceptOrRejectOption) {
                 case 1:
@@ -96,12 +351,7 @@ if (USSD === "*544#") {
           }
           break;
         case 2:
-          const daily4GBpaymentOption = paymentOptionQuery(
-            4000,
-            0,
-            300,
-            "24hr"
-          );
+          const daily4GBpaymentOption = paymentOptionQuery(4000, 0, 300);
           switch (daily4GBpaymentOption) {
             case 1:
               const daily4GBacceptOrRejectOption = acceptOrRejectQuery(
@@ -388,42 +638,54 @@ function BuyOptionQuery() {
   return query(choice, 1, 2);
 }
 
-function paymentOptionQuery(dataPlan, smsPlan, price) {
+function paymentOptionQuery(dataPlan, smsPlan, price, extra) {
   const data = dataPlan >= 1000 ? dataPlan / 1000 : dataPlan;
   const dataSuffix = dataPlan >= 1000 ? "GB" : "MB";
   const smsSuffix = smsPlan > 0 ? "SMS" : "";
+  const plus1 = smsPlan > 0 ? "+" : "";
+  const plus2 = extra ? "+" : "";
   const choice = parseInt(
     prompt(
-      `Buy ${data}${dataSuffix} + ${
+      `Buy ${data}${dataSuffix} ${plus1} ${
         smsPlan > 0 ? smsPlan : ""
-      }${smsSuffix} @ Sh ${price} using: \n1: Airtime \n2: MPESA \n0: BACK 00: HOME`
+      }${smsSuffix} ${plus2} ${
+        extra ? extra : ""
+      } @ Sh ${price} using: \n1: Airtime \n2: MPESA \n0: BACK 00: HOME`
     )
   );
   return query(choice, 1, 2);
 }
 
-function acceptOrRejectQuery(dataPlan, smsPlan, price, validity) {
+function acceptOrRejectQuery(dataPlan, smsPlan, price, validity, extra) {
   const data = dataPlan >= 1000 ? dataPlan / 1000 : dataPlan;
   const dataSuffix = dataPlan >= 1000 ? "GB" : "MB";
   const smsSuffix = smsPlan > 0 ? "SMS" : "";
+  const plus = smsPlan > 0 ? "+" : "";
+  const plus2 = extra ? "+" : "";
 
   const choice = parseInt(
     prompt(
-      `Do you Accept to purchase ${data}${dataSuffix} + ${
+      `Do you Accept to purchase ${data}${dataSuffix} ${plus} ${
         smsPlan > 0 ? smsPlan : ""
-      }${smsSuffix} @ Sh ${price} valid for ${validity}: \n1: Accept \n2: Cancel \n0: BACK 00: HOME`
+      }${smsSuffix} ${plus2} ${
+        extra ? extra : ""
+      } @ Sh ${price} valid for ${validity}: \n1: Accept \n2: Cancel \n0: BACK 00: HOME`
     )
   );
   return query(choice, 1, 2);
 }
 
-function successfulDataPurchase(dataPlan, smsPlan, Price, validity) {
+function successfulDataPurchase(dataPlan, smsPlan, Price, validity, extra) {
   const dataSuffix = dataPlan >= 1000 ? "GB" : "MB";
   const smsSuffix = smsPlan > 0 ? "SMS" : "";
+  const plus = smsPlan > 0 ? "+" : "";
+  const plus2 = extra ? "+" : "";
   alert(
     `You have successfully purchased ${
       dataPlan >= 1000 ? dataPlan / 1000 : dataPlan
-    }${dataSuffix} + ${smsPlan}SMS @ Sh ${Price} valid for ${validity}. Thank you for choosing Safaricom. `
+    }${dataSuffix} ${plus} ${smsPlan > 0 ? smsPlan : ""}${smsSuffix} ${plus2} ${
+      extra ? extra : ""
+    } @ Sh ${Price} valid for ${validity}. Thank you for choosing Safaricom. `
   );
 }
 
@@ -529,6 +791,15 @@ function howItWorksQuery() {
   const choice = parseInt(
     prompt(
       "\n1: How do I achieve my target \n2: How much do I get  \n3: Which bundles qualify \n4: Which bundles do not qualify  \n0:BACK"
+    )
+  );
+  return query(choice, 1, 4);
+}
+
+function weeklyNyakuaQuery() {
+  const choice = parseInt(
+    prompt(
+      "\n1: 200MB @ Sh50 \n2: 500MB + WhatsApp @ Sh100  \n3: 1.5GB + WhatsApp @ Sh250 \n4: 4GB + WhatsApp @ Sh500 \n0:BACK 00:HOME "
     )
   );
   return query(choice, 1, 4);
