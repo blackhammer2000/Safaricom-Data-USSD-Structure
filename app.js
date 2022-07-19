@@ -316,7 +316,7 @@ if (USSD === "*544#") {
                               switch (option1AcceptOrRejectOption) {
                                 case 1:
                                   successfulDataPurchase(
-                                    4000,
+                                    1000,
                                     0,
                                     500,
                                     "30 Days"
@@ -563,6 +563,251 @@ if (USSD === "*544#") {
                                   break;
                                 case 2:
                                   cancelPurchase();
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                      }
+                      break;
+                  }
+                  break;
+                case 4:
+                  const otherNumber = enterOtherNumber();
+                  const otherNumberMenuOptions = otherNumberMenuQuery();
+                  switch (otherNumberMenuOptions) {
+                    case 1:
+                      const otherNumberDataOnlyOptions =
+                        otherNumberDataOnlyQuery();
+                      switch (otherNumberDataOnlyOptions) {
+                        case 1:
+                          const option1 = BuyOptionQuery();
+                          switch (option1) {
+                            case 1:
+                              const option1PaymentChoice = paymentOptionQuery(
+                                60000,
+                                0,
+                                5000,
+                                "WhatsApp"
+                              );
+                              switch (option1PaymentChoice) {
+                                case 1:
+                                  const option1AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      60000,
+                                      0,
+                                      5000,
+                                      "30 Days",
+                                      "WhatsApp"
+                                    );
+                                  switch (option1AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        60000,
+                                        0,
+                                        5000,
+                                        `30 Days for ${otherNumber}`,
+                                        "WhatsApp"
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                        case 2:
+                          const option2 = BuyOptionQuery();
+                          switch (option2) {
+                            case 1:
+                              const option2PaymentChoice = paymentOptionQuery(
+                                40000,
+                                0,
+                                3000,
+                                "WhatsApp"
+                              );
+                              switch (option2PaymentChoice) {
+                                case 1:
+                                  const option2AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      40000,
+                                      0,
+                                      3000,
+                                      "30 Days",
+                                      "WhatsApp"
+                                    );
+                                  switch (option2AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        40000,
+                                        0,
+                                        3000,
+                                        `30 Days for ${otherNumber}`,
+                                        "WhatsApp"
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                        case 3:
+                          const option3 = BuyOptionQuery();
+                          switch (option3) {
+                            case 1:
+                              const option3PaymentChoice = paymentOptionQuery(
+                                20000,
+                                0,
+                                2000,
+                                "WhatsApp"
+                              );
+                              switch (option3PaymentChoice) {
+                                case 1:
+                                  const option3AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      20000,
+                                      0,
+                                      2000,
+                                      "30 Days",
+                                      "WhatsApp"
+                                    );
+                                  switch (option3AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        20000,
+                                        0,
+                                        2000,
+                                        `30 Days for ${otherNumber}`,
+                                        "WhatsApp"
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                        case 4:
+                          const option4 = BuyOptionQuery();
+                          switch (option4) {
+                            case 1:
+                              const option4PaymentChoice = paymentOptionQuery(
+                                7000,
+                                0,
+                                1000,
+                                "WhatsApp"
+                              );
+                              switch (option4PaymentChoice) {
+                                case 1:
+                                  const option4AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      7000,
+                                      0,
+                                      1000,
+                                      "30 Days",
+                                      "WhatsApp"
+                                    );
+                                  switch (option4AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        7000,
+                                        0,
+                                        1000,
+                                        `30 Days for ${otherNumber}`,
+                                        "WhatsApp"
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                        case 5:
+                          const option5 = BuyOptionQuery();
+                          switch (option5) {
+                            case 1:
+                              const option5PaymentChoice = paymentOptionQuery(
+                                2500,
+                                0,
+                                500,
+                                "WhatsApp"
+                              );
+                              switch (option5PaymentChoice) {
+                                case 1:
+                                  const option5AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      2500,
+                                      0,
+                                      500,
+                                      "30 Days",
+                                      "WhatsApp"
+                                    );
+                                  switch (option5AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        2500,
+                                        0,
+                                        500,
+                                        `30 Days for ${otherNumber}`,
+                                        "WhatsApp"
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                        case 6:
+                          const option6 = BuyOptionQuery();
+                          switch (option6) {
+                            case 1:
+                              const option6PaymentChoice = paymentOptionQuery(
+                                1000,
+                                0,
+                                250
+                              );
+                              switch (option6PaymentChoice) {
+                                case 1:
+                                  const option6AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      1000,
+                                      0,
+                                      250,
+                                      "30 Days",
+                                      "WhatsApp"
+                                    );
+                                  switch (option6AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        1000,
+                                        0,
+                                        250,
+                                        `30 Days for ${otherNumber}`,
+                                        "WhatsApp"
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
                                   break;
                               }
                               break;
@@ -1101,6 +1346,33 @@ function monthlyAllInOneQuery() {
   );
   return query(choice, 1, 3);
 }
+
+function enterOtherNumber() {
+  const phoneNumber = prompt("Please Enter Other Number");
+  if (phoneNumber.length <= 9 || phoneNumber.length >= 11) {
+    alert("Enter a valid phone number.");
+    return;
+  } else {
+    return phoneNumber;
+  }
+}
+
+function otherNumberMenuQuery() {
+  const choice = parseInt(
+    prompt("\n1: Data Only Plans \n2: All In One \n0:BACK 00:HOME 98:MORE")
+  );
+  return query(choice, 1, 2);
+}
+
+function otherNumberDataOnlyQuery() {
+  const choice = parseInt(
+    prompt(
+      "\n1: Sh5000 (60GB + WhatsApp) \n2: Sh3000 (40GB + WhatsApp)  \n3: Sh2000 (20GB + WhatsApp) \n4: Sh1000 (7GB + WhatsApp) \n5: Sh500 (2.5GB + WhatsApp) \n6: Sh250 (1GB) \n0:BACK 00:HOME 98:MORE"
+    )
+  );
+  return query(choice, 1, 6);
+}
+
 /////////////MY DATA DEALS QUERIES//////////////////////////////////
 function levelOneDataDealsQuery() {
   const choice = parseInt(
