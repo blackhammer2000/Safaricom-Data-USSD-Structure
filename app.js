@@ -390,8 +390,8 @@ function BuyOptionQuery() {
 
 function paymentOptionQuery(dataPlan, smsPlan, price) {
   const data = dataPlan >= 1000 ? dataPlan / 1000 : dataPlan;
-  const dataSuffix = dataPlan >= 1000 ? GB : MB;
-  const smsSuffix = smsPlan > 0 ? SMS : "";
+  const dataSuffix = dataPlan >= 1000 ? "GB" : "MB";
+  const smsSuffix = smsPlan > 0 ? "SMS" : "";
   const choice = parseInt(
     prompt(
       `Buy ${data}${dataSuffix} + ${
@@ -403,12 +403,14 @@ function paymentOptionQuery(dataPlan, smsPlan, price) {
 }
 
 function acceptOrRejectQuery(dataPlan, smsPlan, price, validity) {
-  const smsSuffix = smsPlan > 0 ? SMS : "";
+  const data = dataPlan >= 1000 ? dataPlan / 1000 : dataPlan;
+  const dataSuffix = dataPlan >= 1000 ? "GB" : "MB";
+  const smsSuffix = smsPlan > 0 ? "SMS" : "";
 
   const choice = parseInt(
     prompt(
-      `Do you Accept to purchase ${dataPlan}MB + ${
-        smsPlan > 0 ? SMS : ""
+      `Do you Accept to purchase ${data}${dataSuffix} + ${
+        smsPlan > 0 ? smsPlan : ""
       }${smsSuffix} @ Sh ${price} valid for ${validity}: \n1: Accept \n2: Cancel \n0: BACK 00: HOME`
     )
   );
@@ -416,7 +418,8 @@ function acceptOrRejectQuery(dataPlan, smsPlan, price, validity) {
 }
 
 function successfulDataPurchase(dataPlan, smsPlan, Price, validity) {
-  const dataSuffix = dataPlan >= 1000 ? GB : MB;
+  const dataSuffix = dataPlan >= 1000 ? "GB" : "MB";
+  const smsSuffix = smsPlan > 0 ? "SMS" : "";
   alert(
     `You have successfully purchased ${
       dataPlan >= 1000 ? dataPlan / 1000 : dataPlan
