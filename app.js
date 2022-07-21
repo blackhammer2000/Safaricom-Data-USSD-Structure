@@ -939,6 +939,175 @@ if (USSD === "*544#") {
                       break;
                   }
                   break;
+                case 5:
+                  const joinPostPayOptions = joinPostPayQuery();
+                  switch (joinPostPayOptions) {
+                    case 1:
+                      continueWithWeb();
+                      break;
+                    case 2:
+                      const postPayDataOptions = postPayDataQuery();
+                      switch (postPayDataOptions) {
+                        case 1:
+                          const option1 = BuyOptionQuery();
+                          switch (option1) {
+                            case 1:
+                              const option1PaymentChoice = paymentOptionQuery(
+                                5000,
+                                "Unlimited SMS",
+                                1050,
+                                "400Mins"
+                              );
+                              switch (option1PaymentChoice) {
+                                case 1:
+                                  const option1AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      5000,
+                                      "Unlimited SMS",
+                                      1050,
+                                      "30 Days",
+                                      "400Mins"
+                                    );
+                                  switch (option1AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        5000,
+                                        "Unlimited SMS",
+                                        1050,
+                                        "30 Days",
+                                        "400Mins"
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                        case 2:
+                          const option2 = BuyOptionQuery();
+                          switch (option2) {
+                            case 1:
+                              const option2PaymentChoice = paymentOptionQuery(
+                                15000,
+                                "Unlimited SMS",
+                                2100,
+                                "1000Mins"
+                              );
+                              switch (option2PaymentChoice) {
+                                case 1:
+                                  const option2AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      15000,
+                                      "Unlimited SMS",
+                                      2100,
+                                      "30 Days",
+                                      "1000Mins"
+                                    );
+                                  switch (option2AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        15000,
+                                        "Unlimited SMS",
+                                        2100,
+                                        "30 Days",
+                                        "1000Mins"
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                        case 3:
+                          const option3 = BuyOptionQuery();
+                          switch (option3) {
+                            case 1:
+                              const option3PaymentChoice = paymentOptionQuery(
+                                25000,
+                                "Unlimited SMS",
+                                3150,
+                                "1500Mins"
+                              );
+                              switch (option3PaymentChoice) {
+                                case 1:
+                                  const option3AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      25000,
+                                      "Unlimited SMS",
+                                      3150,
+                                      "30 Days",
+                                      "1500Mins"
+                                    );
+                                  switch (option3AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        25000,
+                                        "Unlimited SMS",
+                                        3150,
+                                        "30 Days",
+                                        "1500Mins"
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                        case 4:
+                          const option4 = BuyOptionQuery();
+                          switch (option4) {
+                            case 1:
+                              const option4PaymentChoice = paymentOptionQuery(
+                                "Unlimited Data",
+                                "Unlimited SMS",
+                                5200,
+                                "2500Mins"
+                              );
+                              switch (option4PaymentChoice) {
+                                case 1:
+                                  const option4AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      "Unlimited Data",
+                                      "Unlimited SMS",
+                                      5200,
+                                      "30 Days",
+                                      "2500Mins"
+                                    );
+                                  switch (option4AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        "Unlimited Data",
+                                        "Unlimited SMS",
+                                        5200,
+                                        "30 Days",
+                                        "2500Mins"
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                      }
+                      break;
+                  }
+                  break;
               }
               break;
           }
@@ -1277,14 +1446,15 @@ function BuyOptionQuery() {
 
 function paymentOptionQuery(dataPlan, smsPlan, price, extra) {
   const data = dataPlan >= 1000 ? dataPlan / 1000 : dataPlan;
-  const dataSuffix = dataPlan >= 1000 ? "GB" : "MB";
+  const dataSuffix =
+    typeof dataPlan === "string" ? "" : dataPlan >= 1000 ? "GB" : "MB";
   const smsSuffix = smsPlan > 0 ? "SMS" : "";
-  const plus1 = smsPlan > 0 ? "+" : "";
+  const plus1 = smsPlan > 0 || typeof smsPlan === "string" ? "+" : "";
   const plus2 = extra ? "+" : "";
   const choice = parseInt(
     prompt(
-      `Buy ${data}${dataSuffix} ${plus1} ${
-        smsPlan > 0 ? smsPlan : ""
+      `Buy ${data}${dataSuffix} ${plus1}  ${
+        smsPlan > 0 || typeof smsPlan === "string" ? smsPlan : ""
       }${smsSuffix} ${plus2} ${
         extra ? extra : ""
       } @ Sh ${price} using: \n1: Airtime \n2: MPESA \n0: BACK 00: HOME`
@@ -1295,15 +1465,16 @@ function paymentOptionQuery(dataPlan, smsPlan, price, extra) {
 
 function acceptOrRejectQuery(dataPlan, smsPlan, price, validity, extra) {
   const data = dataPlan >= 1000 ? dataPlan / 1000 : dataPlan;
-  const dataSuffix = dataPlan >= 1000 ? "GB" : "MB";
+  const dataSuffix =
+    typeof dataPlan === "string" ? "" : dataPlan >= 1000 ? "GB" : "MB";
   const smsSuffix = smsPlan > 0 ? "SMS" : "";
-  const plus = smsPlan > 0 ? "+" : "";
+  const plus = smsPlan > 0 || typeof smsPlan === "string" ? "+" : "";
   const plus2 = extra ? "+" : "";
 
   const choice = parseInt(
     prompt(
       `Confirm the purchase of ${data}${dataSuffix} ${plus} ${
-        smsPlan > 0 ? smsPlan : ""
+        smsPlan > 0 || typeof smsPlan === "string" ? smsPlan : ""
       }${smsSuffix} ${plus2} ${
         extra ? extra : ""
       } @ Sh ${price} valid for ${validity}: \n1: Accept \n2: Cancel \n0: BACK 00: HOME`
@@ -1313,14 +1484,17 @@ function acceptOrRejectQuery(dataPlan, smsPlan, price, validity, extra) {
 }
 
 function successfulDataPurchase(dataPlan, smsPlan, Price, validity, extra) {
-  const dataSuffix = dataPlan >= 1000 ? "GB" : "MB";
+  const dataSuffix =
+    typeof dataPlan === "string" ? "" : dataPlan >= 1000 ? "GB" : "MB";
   const smsSuffix = smsPlan > 0 ? "SMS" : "";
-  const plus = smsPlan > 0 ? "+" : "";
+  const plus = smsPlan > 0 || typeof smsPlan === "string" ? "+" : "";
   const plus2 = extra ? "+" : "";
   alert(
     `Do more with Safaricom. You have successfully purchased ${
       dataPlan >= 1000 ? dataPlan / 1000 : dataPlan
-    }${dataSuffix} ${plus} ${smsPlan > 0 ? smsPlan : ""}${smsSuffix} ${plus2} ${
+    }${dataSuffix} ${plus} ${
+      smsPlan > 0 || typeof smsPlan === "string" ? smsPlan : ""
+    }${smsSuffix} ${plus2} ${
       extra ? extra : ""
     } @ Sh ${Price} valid for ${validity}. Thank you for choosing Safaricom. `
   );
@@ -1347,16 +1521,29 @@ function checkFreeDataBalance(balance) {
     `You will receive  SMS shortly. Simply dial *544# to Buy or Okoa Data and Browse bila waas!!`
   );
 
-  const suffix = balance > 0 ? MB : "";
+  const dataBalance = balance >= 1000 ? balance / 1000 : balance;
+  const suffix = balance >= 0 && balance <= 1000 ? MB : GB;
 
   alert(
-    `Your current balance is ${balance}${suffix} \nClick on https://safaricom.com/account/usage.Click on  https://safaricom.com/account/usage to view your data usage.`
+    `Your current balance is ${dataBalance}${suffix} \nClick on https://safaricom.com/account/usage.Click on  https://safaricom.com/account/usage to view your data usage.`
   );
 }
 
 function joinDataBonusQuery(subscriptionStatus) {
+  switch (subscriptionStatus) {
+    case "subscribed":
+      alert(`Dear customer you are already subscribed to Nyakua Bonus.`);
+      break;
+    case "unsubscribed":
+      const choice = parseInt(
+        prompt(
+          `Do you wish to join the Nyakua Data Bonus Promotion? \n 1: Accept \n2: Cancel`
+        )
+      );
+      return query(choice, 1, 2);
+      break;
+  }
   if (subscriptionStatus === "subscribed") {
-    alert(`Dear customer you are already subscribed to Nyakua Bonus.`);
   } else {
   }
 }
@@ -1500,6 +1687,28 @@ function levelOneDataDealsQuery() {
   const choice = parseInt(
     prompt(
       "1: Sh 99 = 1GB, 24hr \n2: Sh 20 = 1GB, 1hr \n3: Sh 3000 = 25GB, 30 Days \n4:Hot Deals (Tunukiwa) \n0: BACK 00: HOME"
+    )
+  );
+
+  return query(choice, 1, 4);
+}
+
+function joinPostPayQuery() {
+  const choice = parseInt(
+    prompt("1: Continue With Web \n2: Continue With USSD  \n0: BACK 00: HOME")
+  );
+
+  return query(choice, 1, 2);
+}
+
+function continueWithWeb() {
+  alert(`Visit https://www.mysafaricom.com/post-pay-registration.`);
+}
+
+function postPayDataQuery() {
+  const choice = parseInt(
+    prompt(
+      "1: Sh1050 (5GB + 400MINS + Unlimited SMS) \n2:  Sh2100 (15GB + 1000MINS + Unlimited SMS) \n3:  Sh3150 (25GB + 1500MINS + Unlimited SMS) \n4: Sh5200 (Unlimited Data + 2500MINS + Unlimited SMS) \n0: BACK 00: HOME 98:MORE "
     )
   );
 
