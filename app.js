@@ -17,17 +17,30 @@ if (USSD === "*544#") {
                   const BuyOption = BuyOptionQuery();
                   switch (BuyOption) {
                     case 1:
-                      const paymentOption = paymentOptionQuery(35, 35, 10);
+                      const paymentOption = paymentOptionQuery(
+                        35,
+                        35,
+                        10,
+                        "WhatsApp"
+                      );
                       switch (paymentOption) {
                         case 1:
                           const acceptOrRejectOption = acceptOrRejectQuery(
                             35,
                             35,
-                            10
+                            10,
+                            "24hrs",
+                            "WhatsApp"
                           );
                           switch (acceptOrRejectOption) {
                             case 1:
-                              successfulDataPurchase(35, 35, 10, "24HRS");
+                              successfulDataPurchase(
+                                35,
+                                35,
+                                10,
+                                "24HRS",
+                                "WhatsApp"
+                              );
                               break;
                             case 2:
                               cancelPurchase();
