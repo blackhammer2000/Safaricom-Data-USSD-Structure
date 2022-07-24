@@ -1355,6 +1355,33 @@ if (USSD === "*544#") {
                     case 5:
                       const aboutEasyTalkOptions = aboutEasyTalkQuery();
                       switch (aboutEasyTalkOptions) {
+                        case 1:
+                          whatIsEasyTalk();
+                          break;
+                        case 2:
+                          whoIsEligibleForEasyTalk();
+                          break;
+                        case 3:
+                          howDoIPurchaseAnEasyTalkBundle();
+                          break;
+                        case 4:
+                          valididtyOfTheEasyTalkBundle();
+                          break;
+                        case 5:
+                          willItRollOver();
+                          break;
+                        case 6:
+                          multipleOptIns();
+                          break;
+                        case 7:
+                          checkEasyBundleBalance();
+                          break;
+                        case 8:
+                          canIsambazaEasyTalkBundle();
+                          break;
+                        case 9:
+                          canIbuyForAnother();
+                          break;
                       }
                       break;
                   }
@@ -1764,7 +1791,8 @@ function successfulDataPurchase(dataPlan, smsPlan, Price, validity, extra) {
     extra ? extra : ""
   } @ Sh ${Price} valid for ${validity}. Thank you for choosing Safaricom. `;
   const alertMessageSet = new Set(alertMessage.split(" "));
-  alert(Array.from(alertMessageSet).join(" "));
+  const finalPromptMessage = Array.from(alertMessageSet).join(" ");
+  alert(finalPromptMessage);
 }
 
 function cancelPurchase() {
@@ -1965,6 +1993,63 @@ function easyTalkOtherNumberQuery() {
     )
   );
   return query(choice, 1, 3);
+}
+
+function aboutEasyTalkQuery() {
+  const choice = parseInt(
+    prompt(
+      "\n1:What is Easy-Talk Bundle? \n2: Who is Eligible?  \n3: How do I purchase Easy-Talk Bundle? \n4: What is the validity of the bundle? \n5: Will Purchase of another bundle extend my Easy-Talk Bundle Validity? \n6: Can I opt subscribe multiple times? \n7: How do I check my balance? \n8: Will I be able to sambaza the bundle? \nCan I purchase Easy-Talk bundle for another? \n0:BACK"
+    )
+  );
+  return query(choice, 1, 9);
+}
+
+function whatIsEasyTalk() {
+  alert(
+    "This is a new intergrated voice and SMS monthly plan that allows you a worry free experience on Calls & SMS targeting mainly voice heavy customers."
+  );
+}
+
+function whoIsEligibleForEasyTalk() {
+  alert(
+    "The Easy-Talk Monthly Bundles are available to all safaricom customers (Prepaid, Postpay and Hybrid)"
+  );
+}
+
+function howDoIPurchaseAnEasyTalkBundle() {
+  alert(
+    "Dial *444# or *544# select Easy-Talk Monthly which will display available plans for you."
+  );
+}
+
+function valididtyOfTheEasyTalkBundle() {
+  alert("The Easy-Talk Bundle is valid for 30 Days");
+}
+
+function willItRollOver() {
+  alert(
+    "The Easy-Talk Bundle does not roll over when a new bundle is purchased."
+  );
+}
+
+function multipleOptIns() {
+  alert("Yes, you can purchase the bundle as many times as you like.");
+}
+
+function checkEasyBundleBalance() {
+  alert(
+    `Balance check on *444# or *544*44# or send the message "balance" to 144 to shoow the balance of all resources.`
+  );
+}
+
+function canIsambazaEasyTalkBundle() {
+  alert("NO, you cannot transfer Easy-Talk Bundles.");
+}
+
+function canIbuyForAnother() {
+  alert(
+    "Yes, you can purchase an Easy-Talk Bundle for another by dialing *544# or *444# go to the Easy-Bundle and selct buy for another number."
+  );
 }
 
 /////////////MY DATA DEALS QUERIES//////////////////////////////////
