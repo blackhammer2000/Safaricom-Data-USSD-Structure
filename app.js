@@ -1817,7 +1817,7 @@ function checkFreeDataBalance(balance) {
   );
 
   const dataBalance = balance >= 1000 ? balance / 1000 : balance;
-  const suffix = balance >= 0 && balance <= 1000 ? MB : GB;
+  const suffix = balance >= 0 && balance < 1000 ? MB : GB;
 
   alert(
     `Your current balance is ${dataBalance}${suffix} \nClick on https://safaricom.com/account/usage.Click on  https://safaricom.com/account/usage to view your data usage.`
