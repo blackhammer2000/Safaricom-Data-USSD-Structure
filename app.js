@@ -1108,6 +1108,257 @@ if (USSD === "*544#") {
                       break;
                   }
                   break;
+                case 6:
+                  const easyTalkMonthlyOptions = easyTalkMonthlyQuery();
+                  switch (easyTalkMonthlyOptions) {
+                    case 1:
+                      const option1 = BuyOptionQuery();
+                      switch (option1) {
+                        case 1:
+                          const option1PaymentChoice = paymentOptionQuery(
+                            0,
+                            5000,
+                            2000,
+                            "1700 Minutes"
+                          );
+                          switch (option1PaymentChoice) {
+                            case 1:
+                              const option1AcceptOrRejectOption =
+                                acceptOrRejectQuery(
+                                  0,
+                                  5000,
+                                  2000,
+                                  "30 Days",
+                                  "1700 Minutes"
+                                );
+                              switch (option1AcceptOrRejectOption) {
+                                case 1:
+                                  successfulDataPurchase(
+                                    0,
+                                    5000,
+                                    2000,
+                                    "30 Days",
+                                    "1700 Minutes"
+                                  );
+                                  break;
+                                case 2:
+                                  cancelPurchase();
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                      }
+                      break;
+                    case 2:
+                      const option2 = BuyOptionQuery();
+                      switch (option2) {
+                        case 1:
+                          const option2PaymentChoice = paymentOptionQuery(
+                            0,
+                            1000,
+                            1000,
+                            "800 Minutes"
+                          );
+                          switch (option2PaymentChoice) {
+                            case 1:
+                              const option2AcceptOrRejectOption =
+                                acceptOrRejectQuery(
+                                  0,
+                                  1000,
+                                  1000,
+                                  "30 Days",
+                                  "800 Minutes"
+                                );
+                              switch (option2AcceptOrRejectOption) {
+                                case 1:
+                                  successfulDataPurchase(
+                                    0,
+                                    1000,
+                                    1000,
+                                    "30 Days",
+                                    "800 Minutes"
+                                  );
+                                  break;
+                                case 2:
+                                  cancelPurchase();
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                      }
+                      break;
+                    case 3:
+                      const option3 = BuyOptionQuery();
+                      switch (option3) {
+                        case 1:
+                          const option3PaymentChoice = paymentOptionQuery(
+                            0,
+                            500,
+                            500,
+                            "300 Minutes"
+                          );
+                          switch (option3PaymentChoice) {
+                            case 1:
+                              const option3AcceptOrRejectOption =
+                                acceptOrRejectQuery(
+                                  0,
+                                  500,
+                                  500,
+                                  "30 Days",
+                                  "300 Minutes"
+                                );
+                              switch (option3AcceptOrRejectOption) {
+                                case 1:
+                                  successfulDataPurchase(
+                                    0,
+                                    500,
+                                    500,
+                                    "30 Days",
+                                    "300 Minutes"
+                                  );
+                                  break;
+                                case 2:
+                                  cancelPurchase();
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                      }
+                      break;
+                    case 4:
+                      const otherNumber = enterOtherNumber();
+                      const easyTalkOtherNumberOptions =
+                        easyTalkOtherNumberQuery();
+                      switch (easyTalkOtherNumberOptions) {
+                        case 1:
+                          const option1 = BuyOptionQuery();
+                          switch (option1) {
+                            case 1:
+                              const option1PaymentChoice = paymentOptionQuery(
+                                0,
+                                5000,
+                                2000,
+                                `1700 Minutes for ${otherNumber}`
+                              );
+                              switch (option1PaymentChoice) {
+                                case 1:
+                                  const option1AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      0,
+                                      5000,
+                                      2000,
+                                      "30 Days",
+                                      `1700 Minutes for ${otherNumber}`
+                                    );
+                                  switch (option1AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        0,
+                                        5000,
+                                        2000,
+                                        "30 Days",
+                                        `1700 Minutes for ${otherNumber}`
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                        case 2:
+                          const option2 = BuyOptionQuery();
+                          switch (option2) {
+                            case 1:
+                              const option2PaymentChoice = paymentOptionQuery(
+                                0,
+                                1000,
+                                1000,
+                                `800 Minutes for ${otherNumber}`
+                              );
+                              switch (option2PaymentChoice) {
+                                case 1:
+                                  const option2AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      0,
+                                      1000,
+                                      1000,
+                                      "30 Days",
+                                      `800 Minutes for ${otherNumber}`
+                                    );
+                                  switch (option2AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        0,
+                                        1000,
+                                        1000,
+                                        "30 Days",
+                                        `800 Minutes for ${otherNumber}`
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                        case 3:
+                          const option3 = BuyOptionQuery();
+                          switch (option3) {
+                            case 1:
+                              const option3PaymentChoice = paymentOptionQuery(
+                                0,
+                                500,
+                                500,
+                                `300 Minutes for ${otherNumber}`
+                              );
+                              switch (option3PaymentChoice) {
+                                case 1:
+                                  const option3AcceptOrRejectOption =
+                                    acceptOrRejectQuery(
+                                      0,
+                                      500,
+                                      500,
+                                      "30 Days",
+                                      `300 Minutes for ${otherNumber}`
+                                    );
+                                  switch (option3AcceptOrRejectOption) {
+                                    case 1:
+                                      successfulDataPurchase(
+                                        0,
+                                        500,
+                                        500,
+                                        "30 Days",
+                                        `300 Minutes for ${otherNumber}`
+                                      );
+                                      break;
+                                    case 2:
+                                      cancelPurchase();
+                                      break;
+                                  }
+                                  break;
+                              }
+                              break;
+                          }
+                          break;
+                      }
+                      break;
+                    case 5:
+                      const aboutEasyTalkOptions = aboutEasyTalkQuery();
+                      switch (aboutEasyTalkOptions) {
+                      }
+                      break;
+                  }
+                  break;
               }
               break;
           }
@@ -1445,59 +1696,75 @@ function BuyOptionQuery() {
 }
 
 function paymentOptionQuery(dataPlan, smsPlan, price, extra) {
-  const data = dataPlan >= 1000 ? dataPlan / 1000 : dataPlan;
+  const data =
+    dataPlan > 0 ? (dataPlan >= 1000 ? dataPlan / 1000 : dataPlan) : "";
   const dataSuffix =
-    typeof dataPlan === "string" ? "" : dataPlan >= 1000 ? "GB" : "MB";
+    dataPlan === 0 || typeof dataPlan === "string"
+      ? ""
+      : dataPlan >= 1000
+      ? "GB"
+      : "MB";
   const smsSuffix = smsPlan > 0 ? "SMS" : "";
-  const plus1 = smsPlan > 0 || typeof smsPlan === "string" ? "+" : "";
+  const plus =
+    (smsPlan > 0 && dataPlan > 0) || typeof smsPlan === "string" ? "+" : "";
   const plus2 = extra ? "+" : "";
-  const choice = parseInt(
-    prompt(
-      `Buy ${data}${dataSuffix} ${plus1}  ${
-        smsPlan > 0 || typeof smsPlan === "string" ? smsPlan : ""
-      }${smsSuffix} ${plus2} ${
-        extra ? extra : ""
-      } @ Sh ${price} using: \n1: Airtime \n2: MPESA \n0: BACK 00: HOME`
-    )
-  );
+  const rawPromptMessage = `Buy ${data}${dataSuffix} ${plus}  ${
+    smsPlan > 0 || typeof smsPlan === "string" ? smsPlan : ""
+  }${smsSuffix} ${plus2} ${
+    extra ? extra : ""
+  } @ Sh ${price} using: \n1: Airtime \n2: MPESA \n0: BACK 00: HOME`;
+
+  const PromptMessageSet = new Set(rawPromptMessage.split(" "));
+  const finalPromptMessage = Array.from(PromptMessageSet).join(" ");
+
+  const choice = parseInt(prompt(finalPromptMessage));
   return query(choice, 1, 2);
 }
 
 function acceptOrRejectQuery(dataPlan, smsPlan, price, validity, extra) {
-  const data = dataPlan >= 1000 ? dataPlan / 1000 : dataPlan;
+  const data = dataPlan ? (dataPlan >= 1000 ? dataPlan / 1000 : dataPlan) : "";
   const dataSuffix =
-    typeof dataPlan === "string" ? "" : dataPlan >= 1000 ? "GB" : "MB";
+    dataPlan === 0 || typeof dataPlan === "string"
+      ? ""
+      : dataPlan >= 1000
+      ? "GB"
+      : "MB";
   const smsSuffix = smsPlan > 0 ? "SMS" : "";
-  const plus = smsPlan > 0 || typeof smsPlan === "string" ? "+" : "";
+  const plus =
+    (smsPlan > 0 && dataPlan > 0) || typeof smsPlan === "string" ? "+" : "";
   const plus2 = extra ? "+" : "";
+  const rawPromptMessage = `Confirm the purchase of ${data}${dataSuffix} ${plus} ${
+    smsPlan > 0 || typeof smsPlan === "string" ? smsPlan : ""
+  }${smsSuffix} ${plus2} ${
+    extra ? extra : ""
+  } @ Sh ${price} valid for ${validity}: \n1: Accept \n2: Cancel \n0: BACK 00: HOME`;
 
-  const choice = parseInt(
-    prompt(
-      `Confirm the purchase of ${data}${dataSuffix} ${plus} ${
-        smsPlan > 0 || typeof smsPlan === "string" ? smsPlan : ""
-      }${smsSuffix} ${plus2} ${
-        extra ? extra : ""
-      } @ Sh ${price} valid for ${validity}: \n1: Accept \n2: Cancel \n0: BACK 00: HOME`
-    )
-  );
+  const PromptMessageSet = new Set(rawPromptMessage.split(" "));
+  const finalPromptMessage = Array.from(PromptMessageSet).join(" ");
+
+  const choice = parseInt(prompt(finalPromptMessage));
   return query(choice, 1, 2);
 }
 
 function successfulDataPurchase(dataPlan, smsPlan, Price, validity, extra) {
+  const data = dataPlan ? (dataPlan >= 1000 ? dataPlan / 1000 : dataPlan) : "";
   const dataSuffix =
-    typeof dataPlan === "string" ? "" : dataPlan >= 1000 ? "GB" : "MB";
+    dataPlan === 0 || typeof dataPlan === "string"
+      ? ""
+      : dataPlan >= 1000
+      ? "GB"
+      : "MB";
   const smsSuffix = smsPlan > 0 ? "SMS" : "";
-  const plus = smsPlan > 0 || typeof smsPlan === "string" ? "+" : "";
+  const plus =
+    (smsPlan > 0 && dataPlan > 0) || typeof smsPlan === "string" ? "+" : "";
   const plus2 = extra ? "+" : "";
-  alert(
-    `Do more with Safaricom. You have successfully purchased ${
-      dataPlan >= 1000 ? dataPlan / 1000 : dataPlan
-    }${dataSuffix} ${plus} ${
-      smsPlan > 0 || typeof smsPlan === "string" ? smsPlan : ""
-    }${smsSuffix} ${plus2} ${
-      extra ? extra : ""
-    } @ Sh ${Price} valid for ${validity}. Thank you for choosing Safaricom. `
-  );
+  const alertMessage = `Do more with Safaricom. You have successfully purchased ${data}${dataSuffix} ${plus} ${
+    smsPlan > 0 || typeof smsPlan === "string" ? smsPlan : ""
+  }${smsSuffix} ${plus2} ${
+    extra ? extra : ""
+  } @ Sh ${Price} valid for ${validity}. Thank you for choosing Safaricom. `;
+  const alertMessageSet = new Set(alertMessage.split(" "));
+  alert(Array.from(alertMessageSet).join(" "));
 }
 
 function cancelPurchase() {
@@ -1680,6 +1947,24 @@ function otherNumberDataOnlyQuery() {
     )
   );
   return query(choice, 1, 6);
+}
+
+function easyTalkMonthlyQuery() {
+  const choice = parseInt(
+    prompt(
+      "\n1: Sh2000 (1700 Minutes + 5000 SMS) \n2: Sh1000 (800 Minutes + 1000 SMS)  \n3: Sh500 (300 Minutes + 500 SMS) \n4: Buy for Other \n5: About Easy Talk) \n0:BACK 00:HOME 98:MORE"
+    )
+  );
+  return query(choice, 1, 5);
+}
+
+function easyTalkOtherNumberQuery() {
+  const choice = parseInt(
+    prompt(
+      "\n1: Sh2000 (1700 Minutes + 5000 SMS) \n2: Sh1000 (800 Minutes + 1000 SMS)  \n3: Sh500 (300 Minutes + 500 SMS) \n0:BACK"
+    )
+  );
+  return query(choice, 1, 3);
 }
 
 /////////////MY DATA DEALS QUERIES//////////////////////////////////
