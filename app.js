@@ -1399,6 +1399,20 @@ if (USSD === "*544#") {
                       break;
                   }
                   break;
+                case 7:
+                  const postPayFAQsOptions = postPayFAQsQuery();
+                  switch (postPayFAQsOptions) {
+                    case 1:
+                      upgradePostpayPlan();
+                      break;
+                    case 2:
+                      downgradePostpayPlan();
+                      break;
+                    case 3:
+                      more();
+                      break;
+                  }
+                  break;
               }
               break;
           }
@@ -2011,7 +2025,7 @@ function easyTalkOtherNumberQuery() {
 function aboutEasyTalkQuery() {
   const choice = parseInt(
     prompt(
-      "\n1:What is Easy-Talk Bundle? \n2: Who is Eligible?  \n3: How do I purchase Easy-Talk Bundle? \n4: What is the validity of the bundle? \n5: Will Purchase of another bundle extend my Easy-Talk Bundle Validity? \n6: Can I opt subscribe multiple times? \n7: How do I check my balance? \n8: Will I be able to sambaza the bundle? \nCan I purchase Easy-Talk bundle for another? \n0:BACK"
+      "\n1:What is Easy-Talk Bundle? \n2: Who is Eligible?  \n3: How do I purchase Easy-Talk Bundle? \n4: What is the validity of the bundle? \n5: Will Purchase of another bundle extend my Easy-Talk Bundle Validity? \n6: Can I opt subscribe multiple times? \n7: How do I check my balance? \n8: Will I be able to sambaza the bundle? \n9: Can I purchase Easy-Talk bundle for another? \n0:BACK"
     )
   );
   return query(choice, 1, 9);
@@ -2098,6 +2112,30 @@ function postPayDataQuery() {
   return query(choice, 1, 4);
 }
 
+function postPayFAQsQuery() {
+  const choice = parseInt(
+    prompt(
+      "1: How do I upgrade my plan? \n2: How do I downgrade my plan?\n3: More"
+    )
+  );
+
+  return query(choice, 1, 3);
+}
+
+function upgradePostpayPlan() {
+  alert(
+    "Please dial *200*5# to upgrade credit limit to match your preferred plan. Then dial *200*0# to change your plan."
+  );
+}
+
+function downgradePostpayPlan() {
+  alert("Please dial *200*5# to downgrade limit and plan");
+}
+
+function more() {
+  alert("You will recieve an SMS  shortly.");
+  alert("Follw link https://www.safaricom.co.ke/faqs/faq/829");
+}
 ///////////////////////DAILY BUNDLES NEW ////////////////////////////////
 function dailyBundlesNEWquery() {
   const choice = parseInt(
